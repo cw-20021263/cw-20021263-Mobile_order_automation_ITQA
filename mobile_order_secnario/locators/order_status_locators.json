@@ -46,6 +46,26 @@
       "ios": {
         "accessibility_id": ""
       }
+    },
+
+    "customer_search": {
+      "android": {
+        "id": "input-28",
+        "xpath": "//android.widget.EditText[@resource-id=\"input-28\"]"
+      },
+      "ios": {
+        "accessibility_id": ""
+      }
+    },
+
+    "search_button": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.Button[@text=\"append icon\"]"
+      },
+      "ios": {
+        "accessibility_id": ""
+      }
     }
   }
 }

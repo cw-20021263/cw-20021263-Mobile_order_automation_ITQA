@@ -12,6 +12,14 @@
     "general_order_button": {
       "android": {
         "id": "",
+        "xpath": "//android.widget.Button[@text=\"일반 주문하기\"]"
+      },
+      "ios": ""
+    },
+
+    "general_count_button": {
+      "android": {
+        "id": "",
         "xpath": "//android.widget.TextView[@text='일반주문']/following-sibling::android.widget.Button[contains(@text, '건')]"
       },
       "ios": ""

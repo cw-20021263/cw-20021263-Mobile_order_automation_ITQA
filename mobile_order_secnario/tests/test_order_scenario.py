@@ -10,6 +10,8 @@ from utils.appium_driver import init_appium_driver
 from utils.config_manager import ConfigManager
 from utils.logger import logger
 
+from mobile_order_secnario.pages.auth_page import AuthPage
+
 
 class TestMobileOrderScenario:
     """
@@ -49,8 +51,9 @@ class TestMobileOrderScenario:
             # 2. 모바일 주문 서비스 이동 단계
             order_page = MobileOrderPage(appium_driver, platform)
             order_page.access_mobile_order_via_docbar()
-            order_page.start_general_order()
-
+            # order_page.start_general_order()    #일반 주문하기 진입
+            order_page.start_general_count()   #주문 이어하기 통해 주문 현황 진입
+            #
             # # 3. 고객 인증 단계
             # auth_page = AuthPage(appium_driver, platform)
             # auth_page.perform_customer_authentication(
@@ -58,12 +61,12 @@ class TestMobileOrderScenario:
             #     name=customer_data["VALID_CUSTORMER_NAME"],
             #     phone_number=customer_data["VALID_CUSTORMER_PHONE"]
             # )
-
+            #
             # # 4. 주문현황 상태 확인(인증입력)
             # order_status_page = OrderStatusPage(appium_driver, platform)
             # order_status_page.verify_auth_button_for_customer(
             #     customer_name=customer_data["VALID_CUSTORMER_NAME"]
-            # )
+            #)
             #TODO:PASS앱 인증 함수 생성 필요
 
             #6. 주문현황 상태 확인(인증완료)

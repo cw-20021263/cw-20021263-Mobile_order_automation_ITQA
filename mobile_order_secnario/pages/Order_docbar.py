@@ -48,3 +48,19 @@ class MobileOrderPage(BasePage):
             logger.error(f"'일반 주문하기' 시작 실패: {e}", exc_info=True)
             self.take_screenshot("start_general_order_failure")
             raise
+
+    def start_general_count(self):
+        """
+        모바일 주문 서비스에서 '일반 주문하기' 버튼을 클릭하여 주문을 시작합니다.
+        """
+        logger.info("'주문 이어하기 일반주문 건 수' 진입")
+        try:
+            # -> self.locators를 사용하도록 수정합니다.
+            self.wait_and_click(self.locators.get("general_count_button"), "'주문이어하기' 일반주문 건 수")
+            logger.info("'일반 주문' 버튼 클릭 완료.")
+            self.medium_sleep()
+            logger.info("'일반 주문 진입' 시작 및 다음 단계 진입 확인.")
+        except Exception as e:
+            logger.error(f"'일반 주문 진입' 시작 실패: {e}", exc_info=True)
+            self.take_screenshot("start_general_order_failure")
+            raise
