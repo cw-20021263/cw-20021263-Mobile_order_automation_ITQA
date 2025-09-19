@@ -1,0 +1,26 @@
+{
+  "Appium": {
+    "server_url": "http://127.0.0.1:4723/wd/hub"
+  },
+  "Capabilities_Android": {
+    "platformName": "Android",
+    "platformVersion": "15.0",
+    "deviceName": "Galaxy 22",
+    "udid": "R5CT22YH3FD",
+    "automationName": "UiAutomator2",
+    "appPackage": "com.coway.catalog.seller.stg",
+    "appActivity": "kr.coway.catalog.activity.webMain.WebMainActivity",
+    "noReset": false,
+    "newCommandTimeout": 10000
+  },
+  "Capabilities_iOS": {
+    "platformName": "iOS",
+    "platformVersion": "15.0",
+    "deviceName": "iPhone 13",
+    "udid": "R3CW101ABCD",
+    "automationName": "XCUITest",
+    "bundleId": "com.coway.catalog.seller.stg",
+    "noReset": false,
+    "newCommandTimeout": 10000
+  }
+}

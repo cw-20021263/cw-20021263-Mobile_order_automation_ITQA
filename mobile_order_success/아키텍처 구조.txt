@@ -1,0 +1,34 @@
+├── tests/
+│   └── __init__.py
+│   └── test_order_scenario.py	    #테스트 실행 파일
+├── pages/
+│   └── __init__.py
+│   ├── digitalsales_login.py	    	#디지털세일즈앱에서 로그인
+│   ├── Order_docbar.py		        #독바 통해서 모바일 주문 접속 및 일반 주문하기 실행
+│   ├── base_page.py		        #기본적으로 사용하는 기본 함수
+│   ├── auth_page.py		        #모바일 주문 고객인증
+│   ├── product_selection_page.py
+│   ├── discount_selection_page.py
+│   ├── payment_info_page.py
+│   ├── shipping_info_page.py
+│   ├── e_contract_page.py
+│   ├── order_status_page.py
+│   └── pre_contract_page.py
+├── locators/
+│   └── digtalsales_locators.json	#디지털세일즈앱에서 element
+│   └── order_docbar_locators.json	#디지털세일즈앱에서 docbar로 모바일 주문 접근 시 element
+│   └── auth_page_locators.json	#모바일 주문 고객인증 element
+│   └── order_status_locators.json	#주문 현황 페이지 상태 값 확인 element								
+├── utils/
+│   └── __init__.py
+│   ├── appium_driver.py			#appium 드라이버 초기화
+│   ├── config_manager.py		#config json에서 디바이스 정보 가져오는 파일
+│   ├── locator_manager.py		#locator json파일 참조할 수 있게하는 브릿지 파일
+│   ├── logger.py				#로그 템플릿 구조 파일
+├── data/
+│   └── test_data.json			    #고객, 구매 제품 등 테스트 데이터 정보
+├── reports/
+│   ├── screenshots/			    #스크린 샷 저장 폴더
+│   └── html_reports/			    #테스트 결과 저장 폴더
+└── requirements.txt			    #pip등 자동설치 연결 문서
+└── config.json				        #디바이스 정보
