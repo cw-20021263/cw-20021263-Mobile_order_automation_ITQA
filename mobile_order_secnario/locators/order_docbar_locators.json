@@ -1,0 +1,20 @@
+{
+  "test_order": {
+    "mobile_order_button": {
+      "android": {
+        "id": "",
+        "xpath": "//android.view.View[@content-desc=\"모바일 주문\"]"
+      },
+      "ios": {
+        "accessibility_id": "모바일 주문"
+      }
+    },
+    "general_order_button": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.TextView[@text='일반주문']/following-sibling::android.widget.Button[contains(@text, '건')]"
+      },
+      "ios": ""
+    }
+  }
+}

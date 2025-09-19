@@ -1,0 +1,53 @@
+{
+  "auth_page_locators": {
+    "individual_button": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.Button[@text=\"개인\"]"
+      },
+      "ios": ""
+    },
+    "business_button": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.Button[@text=\"개인사업자\"]"
+      },
+      "ios": ""
+    },
+    "name_input": {
+      "android": {
+        "id": "input-27",
+        "xpath": "//android.widget.EditText[@resource-id=\"input-27\"]"
+      },
+      "ios": ""
+    },
+    "phone_number_input": {
+      "android": {
+        "id": "input-30",
+        "xpath": "//android.widget.EditText[@resource-id=\"input-30\"]"
+      },
+      "ios": ""
+    },
+    "auth_request_button": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.Button[@text=\"본인인증 요청\"]"
+      },
+      "ios": ""
+    },
+    "message_send_button": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.Button[@text=\"발송\"]"
+      },
+      "ios": ""
+    },
+    "message_cancel_button": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.Button[@text=\"취소\"]"
+      },
+      "ios": ""
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "product_select": {
+    "Order_Status_Title": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.TextView[@text=\"주문접수\"]"
+      },
+      "ios": {
+        "accessibility_id": ""
+      }
+    },
+    "Customer_Name_Display": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.TextView[@text=\"고객명: {customer_name}\"]"
+      },
+      "ios": {
+        "accessibility_id": ""
+      }
+    },
+    "Product_Search_Title": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.TextView[@text=\"상품검색\"]"
+      },
+      "ios": {
+        "accessibility_id": ""
+      }
+    },
+    "Product_Search_Input": {
+      "android": {
+        "id": "com.coway.catalog.seller.stg:id/input-84",
+        "xpath": "//android.widget.EditText[@resource-id=\"input-84\"]"
+      },
+      "ios": {
+        "accessibility_id": ""
+      }
+    },
+    "Search_Button": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.Button[@text=\"검색\"]"
+      },
+      "ios": {
+        "accessibility_id": ""
+      }
+    },
+    "Tip_Message": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.TextView[@text=\"상조 상품을 주문 할 수 있어요. 검색창에 '상조'를 검색해 보세요.\"]"
+      },
+      "ios": {
+        "accessibility_id": ""
+      }
+    },
+    "View_Order_Guide_Button": {
+      "android": {
+        "id": "",
+        "xpath": "//android.view.View[@content-desc=\"[상조 주문 가이드 자세히 보기]\"]"
+      },
+      "ios": {
+        "accessibility_id": ""
+      }
+    },
+    "Enter_Discount_Info_Button": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.Button[@text=\"할인정보 입력하기\"]"
+      },
+      "ios": {
+        "accessibility_id": ""
+      }
+    }
+  }
+}

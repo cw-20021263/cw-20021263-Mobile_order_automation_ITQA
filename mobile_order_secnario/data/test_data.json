@@ -1,0 +1,25 @@
+{
+  "UserData": {
+    "VALID_INDIVIDUAL_NAME": "김해옥",
+    "VALID_INDIVIDUAL_ID": "CWDS#MCL78",
+    "VALID_INDIVIDUAL_PASSWORD": "Test1234!",
+    "VALID_BUSINESS_GROUP": "CL",
+    "VALID_BUSINESS_NUMBER": "20161815"
+  },
+  "CustomerData": {
+    "VALID_CUSTORMER_TYPE": "개인",
+    "VALID_CUSTORMER_NAME": "음규환",
+    "VALID_CUSTORMER_PHONE": "01030034105"
+  },
+  "ProductData": {
+    "SEARCH_RENTAL_BIDET": "BAS40-A",
+    "SEARCH_KEYWORD_AIR_PURIFIER": "공기청정기",
+    "NON_EXISTENT_PRODUCT": "없는상품123"
+  },
+  "PaymentData": {
+    "BANK_NAME": "신한은행",
+    "ACCOUNT_NUMBER": "110123456789",
+    "CARD_COMPANY": "신한카드",
+    "CARD_NUMBER": "4499111122223333"
+  }
+}
