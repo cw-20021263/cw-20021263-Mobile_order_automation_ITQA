@@ -136,6 +136,22 @@
         "xpath": "//android.widget.Button[@text=\"상품 담기\"]"
       },
       "ios": ""
+    },
+
+    "adding_goods": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.Button[@text=\"상품 추가하기\"]"
+      },
+      "ios": ""
+    },
+
+    "enter_discount_information": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.Button[@text=\"할인정보 입력\"]"
+      },
+      "ios": ""
     }
   }
 }

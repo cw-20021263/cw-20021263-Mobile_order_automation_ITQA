@@ -1,5 +1,4 @@
 # pages/product_selection_page.py
-import random
 
 from pages.base_page import BasePage
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
@@ -135,5 +134,33 @@ class ProductSelectionPage(BasePage):
             self.medium_sleep()
         except Exception as e:
             logger.error(f"❌ '상품담기' 버튼 클릭 실패: {e}", exc_info=True)
+            self.take_screenshot("add_product_to_cart_failure")
+            raise
+
+    def adding_goods(self):
+        """
+        '상품 추가하기' 버튼을 클릭하여 상품을 추가로 주문합니다.
+        """
+        logger.info("'상품 추가하기' 버튼 클릭 시도.")
+        try:
+            self.wait_and_click(self.locators.get("adding_goods"), "상품추가 하기 버튼")
+            logger.info("✅ '상품 추가하기' 버튼 클릭 완료.")
+            self.long_sleep()
+        except Exception as e:
+            logger.error(f"❌ '상품 추가하기' 버튼 클릭 실패: {e}", exc_info=True)
+            self.take_screenshot("add_product_to_cart_failure")
+            raise
+
+    def enter_discount_information(self):
+        """
+        '할인정보 입력하기' 버튼을 클릭하여 Step3로 이동.
+        """
+        logger.info("'할인 정보 입력' 버튼 클릭 시도.")
+        try:
+            self.wait_and_click(self.locators.get("enter_discount_information"), "할인 정보 입력 버튼")
+            logger.info("✅ '할인 정보 입력' 버튼 클릭 완료.")
+            self.long_sleep()
+        except Exception as e:
+            logger.error(f"❌ '할인 정보 입력' 버튼 클릭 실패: {e}", exc_info=True)
             self.take_screenshot("add_product_to_cart_failure")
             raise
