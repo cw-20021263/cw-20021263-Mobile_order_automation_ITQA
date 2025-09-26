@@ -12,9 +12,7 @@
     "VALID_CUSTORMER_PHONE": "01030034105"
   },
   "ProductData": {
-    "SEARCH_RENTAL_BIDET": "BAS40-A",
-    "SEARCH_KEYWORD_AIR_PURIFIER": "공기청정기",
-    "NON_EXISTENT_PRODUCT": "없는상품123"
+    "product_name": "CHP-7211N"
   },
   "PaymentData": {
     "BANK_NAME": "신한은행",

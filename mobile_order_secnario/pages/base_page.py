@@ -2,12 +2,12 @@
 # -> 필요한 모듈들을 모두 임포트합니다.
 import os
 import time
+import random
 from appium.webdriver.common.appiumby import AppiumBy
 from selenium.common.exceptions import TimeoutException, NoSuchElementException, WebDriverException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from utils.logger import logger
-
 
 class BasePage:
     def __init__(self, driver, platform):
@@ -150,6 +150,59 @@ class BasePage:
             logger.info(f"스크린샷 저장 완료: {file_path}")
         except WebDriverException as e:
             logger.error(f"스크린샷 저장 실패: {e}")
+
+    def swipe_up(self, start_y_ratio=0.8, end_y_ratio=0.2, duration=800):
+        """
+        [추가] 화면을 아래에서 위로 스와이프하는 범용 함수입니다.
+        :param start_y_ratio: 스와이프 시작 Y좌표 비율 (화면 높이 대비)
+        :param end_y_ratio: 스와이프 종료 Y좌표 비율 (화면 높이 대비)
+        :param duration: 스와이프 동작 시간 (ms)
+        """
+        try:
+            size = self.driver.get_window_size()
+            start_x = size['width'] / 2
+            start_y = size['height'] * start_y_ratio
+            end_y = size['height'] * end_y_ratio
+
+            self.driver.swipe(start_x, start_y, start_x, end_y, duration)
+
+        except Exception as e:
+            logger.error(f"❌ 스와이프 실패: {e}", exc_info=True)
+            raise
+
+    def select_random_option(self, locator_info, element_name):
+        """
+        요소를 찾아 무작위로 하나를 선택하고 클릭하는 함수입니다.
+        :param locator_info: 로케이터 정보 (딕셔너리 형태)
+        :param element_name: 요소의 이름 (로그 출력용)
+        """
+        logger.info(f"'{element_name}' 목록에서 랜덤 선택 시도.")
+        try:
+            locator_tuples = self._get_locator_tuples(locator_info)
+            # EC.presence_of_all_elements_located를 사용하여 요소 목록이 나타날 때까지 대기
+            elements = self.wait.until(EC.presence_of_all_elements_located(locator_tuples[0]))
+
+            if not elements:
+                # 목록을 찾았으나 비어있는 경우, 찾지 못한 것으로 간주
+                raise NoSuchElementException(f"'{element_name}' 목록을 찾았으나 요소가 비어있습니다.")
+
+            random_element = random.choice(elements)
+
+            # [FIX: StaleElementReferenceException] 클릭 전에 텍스트를 미리 저장
+            # 클릭 후 DOM이 변경되면 요소가 "Stale"해지므로 텍스트를 미리 가져옵니다.
+            selected_text = random_element.text
+
+            random_element.click()
+
+            logger.info(f"✅ '{selected_text}'을(를) 랜덤으로 선택하여 클릭 완료.")
+            self.short_sleep()
+            return  # 성공 시 함수 종료
+
+        except (TimeoutException, NoSuchElementException) as e:
+            # 요소를 찾지 못하면 바로 예외 발생 (재시도하지 않음)
+            logger.error(f"❌ {element_name} 선택 실패: {e}", exc_info=True)
+            self.take_screenshot(f"{element_name.replace(' ', '_')}_selection_failure")
+            raise
 
     def short_sleep(self):
         time.sleep(1)

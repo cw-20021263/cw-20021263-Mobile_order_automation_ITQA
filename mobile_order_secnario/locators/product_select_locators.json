@@ -29,8 +29,8 @@
     },
     "Product_Search_Input": {
       "android": {
-        "id": "com.coway.catalog.seller.stg:id/input-84",
-        "xpath": "//android.widget.EditText[@resource-id=\"input-84\"]"
+        "id": "",
+        "xpath": "//android.view.View[./android.widget.TextView[@text=\"상품검색\"]]//android.widget.EditText"
       },
       "ios": {
         "accessibility_id": ""
@@ -57,7 +57,7 @@
     "View_Order_Guide_Button": {
       "android": {
         "id": "",
-        "xpath": "//android.view.View[@content-desc=\"[상조 주문 가이드 자세히 보기]\"]"
+        "xpath": "//android.widget.TextView[@text=\"[상조 주문 가이드 자세히 보기]\"]"
       },
       "ios": {
         "accessibility_id": ""
@@ -71,6 +71,71 @@
       "ios": {
         "accessibility_id": ""
       }
+    },
+    "first_selection": {
+      "android": {
+        "id": "",
+        "xpath": "//android.view.View[.//android.widget.TextView[contains(@text, '{product_name}')]]"
+      },
+      "ios": ""
+    },
+    "sale_type_buttons": {
+      "android": {
+        "id": "",
+        "xpath": "//android.view.View[./android.widget.Button[@text='판매구분']]/android.view.View[1]//android.widget.Button"
+      },
+      "ios": ""
+    },
+    "management_type_buttons": {
+      "android": {
+        "id": "",
+        "xpath": "//android.view.View[./android.widget.Button[@text='관리유형']]/android.view.View[1]//android.widget.Button"
+      },
+      "ios": ""
+    },
+    "mandatory_period_buttons": {
+      "android": {
+        "id": "",
+        "xpath": "//android.view.View[./android.widget.Button[@text='의무사용기간']]/android.view.View[1]//android.widget.Button"
+      },
+      "ios": ""
+    },
+    "separate_product_buttons": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.Button[@text=\"별매상품 추가 안함\"]"
+      },
+      "ios": ""
+    },
+    "separate_product_details": {
+      "android": {
+        "id": "",
+        "xpath": "//android.view.View[./android.widget.Button[@text='별매상품 추가 안함']]/android.view.View[1]//android.widget.Button"
+      },
+      "ios": ""
+    },
+    "additional_server_buttons": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.Button[@text=\"부가서비스 추가 안함\"]"
+      },
+      "ios": ""
+    },
+
+    "additional_server_details": {
+      "android": {
+        "id": "",
+        "xpath": "//android.view.View[./android.widget.Button[@text='부가서비스 추가 안함']]/android.view.View[1]//android.widget.Button"
+      },
+      "ios": ""
+    },
+
+    "containing_goods": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.Button[@text=\"상품 담기\"]"
+      },
+      "ios": ""
     }
   }
 }

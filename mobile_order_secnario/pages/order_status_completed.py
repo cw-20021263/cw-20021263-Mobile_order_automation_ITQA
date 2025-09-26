@@ -19,6 +19,20 @@ class OrderStatusCompletedPage(BasePage):
         locator_manager.set_platform(platform)
         self.locators = locator_manager.get_locators("Order_Status")
 
+    def send_input_customer(self, customer_name):
+        logger.info(f" 고객 검색 : {customer_name}")
+        try:
+            self.wait_and_send_keys(self.locators.get("customer_search"), customer_name, "고객 검색 입력")
+            self.short_sleep()
+            self.wait_and_click(self.locators.get("search_button"), "검색 버튼")
+            self.medium_sleep()
+            logger.info(f"✅ 고객 '{customer_name}'검색 완료.")
+
+        except (TimeoutException, NoSuchElementException, ValueError) as e:
+            logger.error(f"❌ 고객 '{customer_name}'의 검색을 하지 못했습니다.", exc_info=True)
+            self.take_screenshot("send_input_customer_failure")
+            raise
+
     def click_auth_completed_for_customer(self, customer_name):
         """
         주문 현황 목록에서 '인증완료'와 일치하는 고객의 '인증완료' 버튼을 클릭합니다.

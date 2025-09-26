@@ -6,11 +6,12 @@ import pytest
 from pages.Order_docbar import MobileOrderPage
 from pages.digitalsales_login import DigitalSalesLoginPage
 from pages.order_status_completed import OrderStatusCompletedPage
+from pages.Order_Status_page import OrderStatusPage
 from utils.appium_driver import init_appium_driver
 from utils.config_manager import ConfigManager
 from utils.logger import logger
-
-from mobile_order_secnario.pages.auth_page import AuthPage
+from pages.product_selection_page import ProductSelectionPage
+from pages.auth_page import AuthPage
 
 
 class TestMobileOrderScenario:
@@ -43,6 +44,7 @@ class TestMobileOrderScenario:
             test_data = config_manager.get_test_data()
             user_data = test_data["UserData"]
             customer_data = test_data["CustomerData"]
+            product_data = test_data["ProductData"]
 
             # 1. 로그인 단계
             login_page = DigitalSalesLoginPage(appium_driver, platform)
@@ -71,14 +73,28 @@ class TestMobileOrderScenario:
 
             #6. 주문현황 상태 확인(인증완료)
             order_status_completed_page = OrderStatusCompletedPage(appium_driver, platform)
+            order_status_completed_page.send_input_customer(
+                customer_name=customer_data["VALID_CUSTORMER_NAME"]
+            )
             order_status_completed_page.click_auth_completed_for_customer(
                 customer_name=customer_data["VALID_CUSTORMER_NAME"]
             )
             # 주문 이어서 하기 클릭
             order_status_completed_page.click_order_continue()
 
-            logger.info("✅ 모바일 주문 전체 시나리오 테스트가 성공적으로 완료되었습니다.")
+            # 7. 상품 선택 페이지 시나리오
+            product_page = ProductSelectionPage(appium_driver, platform)
+            product_page.search_product(product_data["product_name"]) # 제품 검색
+            product_page.select_first_product(product_data["product_name"]) #첫번째 제품 선택
+            product_page.select_sale_type_randomly() #하위 판매구분 하위 속성 중 랜덤 선택
+            product_page.select_management_type_randomly()  #관리 유형이 노출되면 랜덤 선택
+            product_page.select_mandatory_period_randomly() # 의무 사용 기간이 노출되면 랜덤 선택
+            product_page.select_separate_product_randomly() #별매 상품 랜덤 선택
+            product_page.additional_server_buttons_randomly()   #부가서비스 랜덤 선택
+            product_page.containing_goods() #상품 담기
 
+        #     logger.info("✅ 모바일 주문 전체 시나리오 테스트가 성공적으로 완료되었습니다.")
+        #
         except Exception as e:
             # -> 테스트 실패 시 로그를 남기고 pytest를 통해 테스트를 실패 처리합니다.
             logger.error(f"❌ 모바일 주문 전체 시나리오 테스트 실패: {e}", exc_info=True)
