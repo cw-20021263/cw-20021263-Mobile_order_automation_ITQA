@@ -196,7 +196,7 @@ class BasePage:
 
             logger.info(f"✅ '{selected_text}'을(를) 랜덤으로 선택하여 클릭 완료.")
             self.short_sleep()
-            return  # 성공 시 함수 종료
+            return selected_text # 선택한 값 반환
 
         except (TimeoutException, NoSuchElementException) as e:
             # 요소를 찾지 못하면 바로 예외 발생 (재시도하지 않음)

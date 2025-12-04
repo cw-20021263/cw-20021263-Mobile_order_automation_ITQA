@@ -17,6 +17,13 @@ class ProductSelectionPage(BasePage):
         locator_manager.set_platform(platform)
         self.locators = locator_manager.get_locators("product_select")
 
+        # ➡️ 1. 선택된 옵션을 저장할 클래스 변수 초기화
+        self.selected_sale_type = None
+        self.selected_management_type = None
+        self.selected_mandatory_period = None
+        self.selected_separate_product = None
+        self.selected_additional_server = None
+
     def search_product(self, product_name): #제품 선택(product_name)
         """
         상품 검색 입력 필드에 제품명을 입력하고 검색 버튼을 클릭합니다.
@@ -60,7 +67,7 @@ class ProductSelectionPage(BasePage):
         """
         logger.info("판매구분 하위 속성 중 랜덤 선택 시도.")
         self.short_sleep()
-        self.select_random_option(self.locators.get("sale_type_buttons"), "'판매 구분' 버튼")
+        self.selected_sale_type = self.select_random_option(self.locators.get("sale_type_buttons"), "'판매 구분' 버튼")
 
     def select_management_type_randomly(self):
         """
@@ -70,10 +77,11 @@ class ProductSelectionPage(BasePage):
             logger.info("관리 유형 하위 속성 중 랜덤 선택 시도.")
             self.swipe_up()
             self.short_sleep()
-            self.select_random_option(self.locators.get("management_type_buttons"), "'관리 유형' 버튼")
+            self.selected_management_type = self.select_random_option(self.locators.get("management_type_buttons"), "'관리 유형' 버튼")
         except (TimeoutException, NoSuchElementException):
             # 💡 예외를 잡아서 실패 대신 스킵으로 처리
             logger.info("ℹ️ '관리 유형'이 노출되지 않아 스킵합니다.")
+            self.selected_management_type = "SKIP (미노출)"
             pass
 
     def select_mandatory_period_randomly(self):
@@ -84,10 +92,11 @@ class ProductSelectionPage(BasePage):
             logger.info("의무사용 기간 하위 속성 중 랜덤 선택 시도.")
             self.swipe_up()
             self.short_sleep()
-            self.select_random_option(self.locators.get("mandatory_period_buttons"), "'의무 사용 기간' 버튼")
+            self.selected_mandatory_period = self.select_random_option(self.locators.get("mandatory_period_buttons"), "'의무 사용 기간' 버튼")
         except (TimeoutException, NoSuchElementException):
             # 💡 예외를 잡아서 실패 대신 스킵으로 처리
             logger.info("ℹ️ '의무사용 기간'이 노출되지 않아 스킵합니다.")
+            self.selected_mandatory_period = "SKIP (미노출)"
             pass
 
     def select_separate_product_randomly(self):
@@ -102,9 +111,10 @@ class ProductSelectionPage(BasePage):
             logger.info("✅ '별매상품' 버튼 클릭 완료.")
             self.swipe_up()
             self.short_sleep()
-            self.select_random_option(self.locators.get("separate_product_details"), "'별매상품 랜덤 선택")
+            self.selected_separate_product = self.select_random_option(self.locators.get("separate_product_details"), "'별매상품 랜덤 선택")
         except (TimeoutException, NoSuchElementException):
             logger.info("ℹ️ '별매상품'이 노출되지 않아 스킵합니다.")
+            self.selected_separate_product = "SKIP (미노출)"
             pass
 
     def additional_server_buttons_randomly(self):
@@ -118,9 +128,10 @@ class ProductSelectionPage(BasePage):
             self.wait_and_click(self.locators.get("additional_server_buttons"), "부가서비스 클릭")
             logger.info("✅ '부가서비스' 버튼 클릭 완료.")
             self.short_sleep()
-            self.select_random_option(self.locators.get("additional_server_details"), "부가서비스 랜덤 선택")
+            self.selected_additional_server = self.select_random_option(self.locators.get("additional_server_details"), "부가서비스 랜덤 선택")
         except (TimeoutException, NoSuchElementException):
             logger.info("ℹ️ '부가서비스'가 노출되지 않아 스킵합니다.")
+            self.selected_additional_server = "SKIP (미노출)"
             pass
 
     def containing_goods(self):

@@ -52,9 +52,9 @@ class TestMobileOrderScenario:
 
             # 2. 모바일 주문 서비스 이동 단계
             order_page = MobileOrderPage(appium_driver, platform)
-            order_page.access_mobile_order_via_docbar()
-            # order_page.start_general_order()    #일반 주문하기 진입
-            order_page.start_general_count()   #주문 이어하기 통해 주문 현황 진입
+            order_page.access_mobile_order_via_docbar()  # Docbar로 모바일 주문 진입
+            #order_page.start_general_order()             #일반 주문하기 진입
+            order_page.start_general_count()            #주문 이어하기 통해 주문 현황 진입
             #
             # # 3. 고객 인증 단계
             # auth_page = AuthPage(appium_driver, platform)
@@ -82,22 +82,22 @@ class TestMobileOrderScenario:
             # 주문 이어서 하기 클릭
             order_status_completed_page.click_order_continue()
 
-            # 7. 상품 선택 페이지 시나리오
+            # 7. 상품 선택(Step2) 페이지 시나리오
             product_page = ProductSelectionPage(appium_driver, platform)
             product_page.search_product(product_data["product_name"]) # 제품 검색
             product_page.select_first_product(product_data["product_name"]) #첫번째 제품 선택
             #TODO : 현재는 랜덤으로 판매구분 선택하지만 나중엔 GCP연동해서 판매구분 받아오고 판매 구분에 따라 step3까지 분기 처리 필요
-            product_page.select_sale_type_randomly() #하위 판매구분 하위 속성 중 랜덤 선택
-            product_page.select_management_type_randomly()  #관리 유형이 노출되면 랜덤 선택
-            product_page.select_mandatory_period_randomly() # 의무 사용 기간이 노출되면 랜덤 선택
-            product_page.select_separate_product_randomly() #별매 상품 랜덤 선택
+            product_page.select_sale_type_randomly()            #하위 판매구분 하위 속성 중 랜덤 선택
+            product_page.select_management_type_randomly()      #관리 유형이 노출되면 랜덤 선택
+            product_page.select_mandatory_period_randomly()     # 의무 사용 기간이 노출되면 랜덤 선택
+            product_page.select_separate_product_randomly()     #별매 상품 랜덤 선택
             product_page.additional_server_buttons_randomly()   #부가서비스 랜덤 선택
-            product_page.containing_goods() #상품 담기
+            product_page.containing_goods()                     #상품 담기
             #TODO : 다건 주문에 대한 고려 필요 GCP연동 시 시나리오 탭 읽어와서 다건 주문할지 단건 주문할지에 따라 분기 처리
             #product_page.adding_goods() #상품 추가하기(다건 주문시 필요)
             product_page.enter_discount_information()   #할인정보 입력 클릭(step3이동)
 
-            # 8. 할인 선택 페이지 시나리오
+            # 8. 할인 선택(Step3) 페이지 시나리오
 
 
         #     logger.info("✅ 모바일 주문 전체 시나리오 테스트가 성공적으로 완료되었습니다.")

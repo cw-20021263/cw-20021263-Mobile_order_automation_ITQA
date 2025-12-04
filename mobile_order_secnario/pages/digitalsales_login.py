@@ -48,6 +48,12 @@ class DigitalSalesLoginPage(BasePage):
             except (TimeoutException, NoSuchElementException, ValueError):
                 logger.info("위치 권한 허용 팝업이 나타나지 않아 스킵합니다.")
 
+            try:
+                self.wait_and_click(self.locators.get("main_popup_done_button"), "메인 팝업 X버튼", timeout=5)
+                logger.info("메인팝업 노출 시 X버튼")
+            except (TimeoutException, NoSuchElementException, ValueError):
+                logger.info("메인팝업 미노출")
+
             logger.info("디지털세일즈 앱 로그인 성공.")
         except Exception as e:
             # -> 실패 시 로그를 남기고 스크린샷을 찍은 후 예외를 다시 발생시켜 테스트를 중단합니다.

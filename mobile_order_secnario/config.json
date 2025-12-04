@@ -4,9 +4,9 @@
   },
   "Capabilities_Android": {
     "platformName": "Android",
-    "platformVersion": "15.0",
-    "deviceName": "Galaxy 22",
-    "udid": "R5CT22YH3FD",
+    "platformVersion": "16.0",
+    "deviceName": "Galaxy 23",
+    "udid": "R3CW2041VER",
     "automationName": "UiAutomator2",
     "appPackage": "com.coway.catalog.seller.stg",
     "appActivity": "kr.coway.catalog.activity.webMain.WebMainActivity",
@@ -21,6 +21,7 @@
     "automationName": "XCUITest",
     "bundleId": "com.coway.catalog.seller.stg",
     "noReset": false,
+    "dontStopAppOnReset" : true,
     "newCommandTimeout": 10000
   }
 }
