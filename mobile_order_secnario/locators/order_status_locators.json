@@ -50,8 +50,8 @@
 
     "customer_search": {
       "android": {
-        "id": "",
-        "xpath": "//android.view.View[@index='1']//android.widget.EditText[1]"
+        "id": "input-29",
+        "xpath": "//android.widget.EditText[@resource-id='input-29']"
       },
       "ios": {
         "accessibility_id": ""
@@ -60,8 +60,9 @@
 
     "search_button": {
       "android": {
-        "id": "append icon",
-        "xpath": "//android.widget.Button[@text=\"append icon\"]"
+        "id": "",
+        "xpath": "//*[@content-desc=\"append icon\"]",
+        "accessibility_id": "append icon"
       },
       "ios": {
         "accessibility_id": ""

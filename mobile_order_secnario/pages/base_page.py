@@ -19,7 +19,8 @@ class BasePage:
 
     def _get_locator_tuples(self, locator):
         """
-        -> id, xpath, accessibility_id를 모두 반환하여, 순차적으로 시도할 수 있도록 로케이터 '튜플 리스트'를 반환합니다.
+        -> id, xpath, accessibility_id를 모두 반환하여, 로케이터 데이터(딕셔너리나 문자열)를 코드가 
+        이해할 수 있는 형태(튜플 리스트)로 변환(find_element_with_fallback함수에서만 활용)
         """
         # -> locator가 None이거나 비어있는 dict일 경우 에러를 발생시킵니다.
         if not locator or (isinstance(locator, dict) and not any(locator.values())):
@@ -49,9 +50,15 @@ class BasePage:
 
         return locators
 
-    def find_element_with_fallback(self, locator):
+    def find_element_with_fallback(self, locator, timeout=5):
         """
-        -> 여러 로케이터 전략을 순차적으로 시도하여 요소를 찾는 함수입니다.
+        여러 로케이터 전략을 순차적으로 시도하여 요소를 찾는 함수.
+        반드시 있어야 하는 요소를 찾고 없으면 에러를 발생시키는 함수.
+        timeout(5초)까지 찾고 없으면 스킵
+
+        :param locator: 로케이터 딕셔너리
+        :param timeout: 대기 시간 (기본값 5초)
+        :return: 찾은 WebElement 객체
         """
         last_exception = None
         try:
@@ -62,6 +69,8 @@ class BasePage:
             raise e
 
         # 각 로케이터 튜플을 순서대로 시도합니다.
+        # by : ID, XPATH 등 선택
+        # value : 로케이터 값
         for by, value in locator_tuples:
             try:
                 # 요소의 존재(presence) 여부를 확인합니다.
@@ -77,6 +86,36 @@ class BasePage:
         self.take_screenshot("find_element_failure")
         raise TimeoutException(f"요소를 찾을 수 없습니다. (로케이터: {locator})", screen=getattr(last_exception, 'screen', None),
                                stacktrace=getattr(last_exception, 'stacktrace', None))
+
+    def get_all_elements_with_fallback(self, locator):
+        """
+        [추가] 로케이터(JSON)를 받아서, 현재 플랫폼에 맞는 '모든' 요소를 찾아서 리스트로 반환합니다.
+        (get_all_elements)
+        
+        :param locator: {'android': {...}, 'ios': {...}} 형태의 딕셔너리
+        :return: 찾은 WebElement 리스트 (없으면 빈 리스트 [])
+
+        find_element_with_fallback는 찾고자 하는 요소가 없으면 에러 발생
+        get_all_elements_with_fallback는 요소를 전체 확인 후, 리스트 형태로 반환(없으면 빈 요소 반환)
+        """
+        try:
+            # 1. 내부 함수를 통해 현재 플랫폼에 맞는 전략(By, Value)만 뽑아옵니다.
+            locator_tuples = self._get_locator_tuples(locator)
+            
+            # 2. 뽑아온 전략으로 find_elements(복수형) 실행
+            for by, value in locator_tuples:
+                elements = self.driver.find_elements(by, value)
+                
+                # 하나라도 찾았으면 그 리스트 반환
+                if elements:
+                    return elements
+            
+            # 아무것도 못 찾았으면 빈 리스트 반환
+            return []
+            
+        except Exception as e:
+            # 로그는 선택 사항
+            return []
 
     def wait_and_click(self, locator, element_name, timeout=10):
         """
@@ -124,6 +163,11 @@ class BasePage:
                 wait = WebDriverWait(self.driver, timeout)
                 # -> EC.visibility_of_element_located를 사용하여 요소가 보일 때까지 기다립니다.
                 element = wait.until(EC.visibility_of_element_located((by, value)))
+                # [중요] 일부 입력창(특히 WebView 내 EditText)은 클릭(포커스) 후에만 입력이 정상 동작합니다.
+                try:
+                    element.click()
+                except Exception:
+                    pass
                 element.clear()
                 element.send_keys(text)
                 logger.info(f"'{element_name}' 요소에 텍스트 '{text}'를 입력했습니다. (전략: {by})")
@@ -151,7 +195,7 @@ class BasePage:
         except WebDriverException as e:
             logger.error(f"스크린샷 저장 실패: {e}")
 
-    def swipe_up(self, start_y_ratio=0.8, end_y_ratio=0.2, duration=800):
+    def swipe_up(self, start_y_ratio=0.7, end_y_ratio=0.2, duration=800):
         """
         [추가] 화면을 아래에서 위로 스와이프하는 범용 함수입니다.
         :param start_y_ratio: 스와이프 시작 Y좌표 비율 (화면 높이 대비)
@@ -203,6 +247,30 @@ class BasePage:
             logger.error(f"❌ {element_name} 선택 실패: {e}", exc_info=True)
             self.take_screenshot(f"{element_name.replace(' ', '_')}_selection_failure")
             raise
+
+    def check_element_exists(self, locator, timeout=3):
+        """
+        특정 요소가 화면에 존재하는지 확인(fallback함수와 달리 에러를 발생시키지 않음)
+        분기 처리에 요소가 있는지 확인
+        :param locator: 로케이터 딕셔너리
+        :param timeout: 확인 대기 시간 (초)
+        :return: True(존재함) / False(없음)
+        """
+        try:
+            locator_tuples = self._get_locator_tuples(locator)
+            # 짧은 시간만 대기하도록 설정
+            wait = WebDriverWait(self.driver, timeout)
+            
+            for by, value in locator_tuples:
+                try:
+                    # 요소가 존재하는지 확인
+                    wait.until(EC.presence_of_element_located((by, value)))
+                    return True
+                except TimeoutException:
+                    continue
+            return False
+        except Exception:
+            return False
 
     def short_sleep(self):
         time.sleep(1)

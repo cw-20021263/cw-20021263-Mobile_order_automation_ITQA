@@ -53,3 +53,13 @@ class OrderStatusPage(BasePage):
             logger.error(f"고객 '{customer_name}'의 주문 혹은 '인증입력' 버튼 확인에 실패했습니다: {e}", exc_info=True)
             self.take_screenshot("verify_auth_button_failure")
             raise
+
+    def focus_customer_search_and_type(self, text: str):
+        """
+        주문현황 상단 고객 검색 입력창에 포커스를 주고 텍스트를 입력합니다.
+        - WebView/Hybrid 화면에서는 '보임'만으로는 입력이 안 되는 경우가 있어 클릭(포커스) 후 입력합니다.
+        """
+        search_locator = self.locators.get("customer_search")
+        self.wait_and_click(search_locator, "고객 검색 입력창(포커스)")
+        self.wait_and_send_keys(search_locator, text, "고객 검색 입력창")
+        self.short_sleep()

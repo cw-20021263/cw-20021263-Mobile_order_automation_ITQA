@@ -1,0 +1,305 @@
+{
+    "discount_select": {
+    
+    "step_indicator": {
+        "android": {
+          "id": "",
+          "xpath": "//android.widget.TextView[@text='3']"
+        },
+        "ios": {
+          "accessibility_id": ""
+        }
+      },
+
+      "page_title": {
+        "android": {
+          "id": "",
+          "xpath": "//android.widget.TextView[@text='할인 선택']"
+        },
+        "ios": {
+          "accessibility_id": "할인 선택"
+        }
+      },
+      "customer_name": {
+        "android": {
+          "id": "",
+          "xpath": "//android.widget.TextView[contains(@text, '고객명:')]"
+        },
+        "ios": {
+          "accessibility_id": "customer_name_display"
+        }
+      },
+      "total_count": {
+        "android": {
+          "id": "",
+          "xpath": "//android.view.View[contains(@text, '총') and contains(@text, '개')]"
+        },
+        "ios": {
+          "accessibility_id": "total_count"
+        }
+      },
+      
+      "simultaneous_discount_setting": {
+        "android": {
+          "id": "",
+          "xpath": "//android.view.View[.//android.widget.TextView[@text='동시구매할인']]//android.widget.Button[@text='설정']"
+        },
+        "ios": {
+          "accessibility_id": "동시구매할인 설정"
+        }
+      },
+      "simultaneous_discount_status": {
+        "android": {
+          "id": "",
+          "xpath": "//android.view.View[.//android.widget.TextView[@text='동시구매할인']]//*[contains(@text, '미적용') or contains(@text, '%')]"
+        },
+        "ios": {
+          "accessibility_id": "동시구매할인 상태"
+        }
+    },
+
+    "combination_discount_setting": {
+        "android": {
+          "id": "",
+          "xpath": "//android.view.View[.//android.widget.TextView[@text='결합할인']]//android.widget.Button[@text='설정']"
+        },
+        "ios": {
+          "accessibility_id": "결합할인 설정"
+        }
+      },
+
+      "combination_discount_status": {
+        "android": {
+          "id": "",
+          "xpath": "//android.widget.TextView[@text='결합할인']/parent::*//*[contains(@text, '미적용') or contains(@text, '%') or contains(@text, '적용불가')]"
+        },
+        "ios": {
+          "accessibility_id": "결합할인 상태"
+        }
+      },
+
+      "regular_payment_discount": {
+        "android": {
+          "id": "",
+          "xpath": "//android.widget.Button[contains(@text, '정기결제할인')]"
+        },
+        "ios": {
+          "accessibility_id": "정기결제할인"
+        }
+      },
+      "pre_pass_discount": {
+        "android": {
+          "id": "",
+          "xpath": "//android.widget.Button[contains(@text, 'PRE-PASS')]"
+        },
+        "ios": {
+          "accessibility_id": "Pre-Pass"
+        }
+      },
+
+      "rental_fee_agreement_discount": {
+        "android": {
+          "id": "",
+          "xpath": "//android.widget.Button[contains(@text, '렌탈료약정할인 프로그램')]"
+        },
+        "ios": {
+          "accessibility_id": "렌탈료약정할인"
+        }
+      },
+
+      "prepayment_discount_trigger": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.Button[@text='선납 할인 선택 없음']"
+      },
+      "ios": {
+        "accessibility_id": "선납 할인 선택 없음"
+      }
+      },
+    "prepayment_popup_title": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.TextView[@text='선납 할인 선택']"
+      },
+      "ios": {
+        "accessibility_id": "선납 할인 선택"
+      }
+      },
+    "prepayment_warning_msg": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.TextView[contains(@text, '선택되어있는 할인제도와 중복적용 할 수 없습니다')]"
+      },
+      "ios": {
+        "accessibility_id": "경고 메시지"
+      }
+      },
+    "warning_confirm_btn": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.Button[@text='확인']"
+      },
+      "ios": {
+        "accessibility_id": "확인"
+      }
+      },
+    "prepayment_option_none": {
+      "android": {
+        "xpath": "(//android.widget.Button[@text='선납 할인 선택 없음'])[2]"
+      }
+      },
+    "prepayment_option_1y": {
+      "android": {
+        "xpath": "//android.widget.Button[@text='1년']"
+      }
+      },
+    "prepayment_option_2y": {
+      "android": {
+        "xpath": "//android.widget.Button[@text='2년']"
+      }
+      },
+    "prepayment_option_3y": {
+      "android": {
+        "xpath": "//android.widget.Button[@text='3년']"
+      }
+      },
+    "prepayment_discount_result": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.Button[contains(@text, '원 할인 적용')]"
+      },
+      "ios": {
+        "accessibility_id": "선납 할인 결과"
+      }
+      },
+
+      "prepayment2_discount_trigger": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.Button[@text='선납할인2 할인 선택 없음' or (contains(@text, '선납') and contains(@text, '할인 적용'))]"
+      },
+      "ios": {
+        "accessibility_id": "선납할인2"
+      }
+      },
+      "prepayment_discount2_popup_title": {
+        "android": {
+          "id": "",
+          "xpath": "//android.widget.TextView[@text='선납할인2 할인 선택']"
+        },
+        "ios": {
+          "accessibility_id": "선납할인2 할인 선택"
+        }
+      },
+      "prepayment_discount2_option_none": {
+        "android": {
+          "id": "",
+          "xpath": "//android.widget.Button[@text='선납할인2 할인 선택 없음']"
+        },
+        "ios": {
+          "accessibility_id": "선납할인2 할인 선택 없음"
+        }
+      },
+      "prepayment2_options": {
+      "android": {
+        "xpath": "//android.widget.TextView[@text='선납할인2 할인 선택']/following-sibling::*//android.widget.Button[(contains(@text, '/월') and contains(@text, '원')) or @text='선납할인2 할인 선택 없음']"
+      },
+      "ios": {
+        "accessibility_id" : "",
+        "xpath": "//XCUIElementTypeButton[contains(@label, '/월') or @label='선납할인2 할인 선택 없음']"
+      }
+      },
+
+      "price_calculation_section": {
+      "android": {
+        "xpath": "//android.view.View[.//android.widget.TextView[@text='금액 계산']]"
+      },
+      "ios": {
+        "accessibility_id": "금액 계산 영역"
+      }
+      },
+      "product_amount_label": {
+        "android": {
+          "xpath": "//android.widget.TextView[@text='상품금액']"
+        },
+        "ios": {
+          "accessibility_id": "상품금액"
+        }
+      },
+      "product_amount_value": {
+        "android": {
+          "xpath": "//android.widget.TextView[@text='상품금액']/following-sibling::android.view.View[following-sibling::android.widget.TextView[@text='할인금액']]"
+        },
+        "ios": {
+          "accessibility_id": "상품금액_값"
+        }
+      },
+      "discount_amount_label": {
+        "android": {
+          "xpath": "//android.widget.TextView[@text='할인금액']"
+        },
+        "ios": {
+          "accessibility_id": "할인금액"
+        }
+      },
+      "discount_amount_value": {
+        "android": {
+          "xpath": "//android.widget.TextView[@text='할인금액']/following-sibling::android.view.View[following-sibling::android.widget.TextView[contains(@text, '총') and contains(@text, '금액')]]"
+        },
+        "ios": {
+          "accessibility_id": "할인금액_값"
+        }
+      },
+      "total_amount_label": {
+        "android": {
+          "xpath": "//android.widget.TextView[@text='총 금액']"
+        },
+        "ios": {
+          "accessibility_id": "총 금액"
+        }
+      },
+      "total_amount_value": {
+        "android": {
+          "xpath": "//android.widget.TextView[contains(@text, '총') and contains(@text, '금액')]/following-sibling::android.view.View[following-sibling::android.widget.TextView[contains(@text, '선택한')]]"
+        },
+        "ios": {
+          "accessibility_id": "총금액_값"
+        }
+
+      },
+      "previous_button": {
+        "android": {
+          "id": "",
+          "xpath": "//android.widget.Button[@text='이전']"
+        },
+        "ios": {
+          "accessibility_id": "이전"
+        }
+      },
+      "next_button": {
+        "android": {
+          "id": "",
+          "xpath": "//android.widget.Button[@text='다음']"
+        },
+        "ios": {
+          "accessibility_id": "다음"
+        }
+      },
+      "order_confirmation_popup_confirm_btn": {
+      "android": {
+        "xpath": "//android.widget.Button[@text='확인']"
+      },
+      "ios": {
+        "accessibility_id": "확인"
+      }
+    },
+    "order_confirmation_popup_cancel_btn": {
+      "android": {
+        "xpath": "//android.widget.Button[@text='취소']"
+      },
+      "ios": {
+        "accessibility_id": "취소"
+      }
+    }
+    }
+  }

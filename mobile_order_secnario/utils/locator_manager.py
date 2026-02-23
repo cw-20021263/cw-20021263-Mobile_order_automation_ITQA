@@ -31,6 +31,7 @@ class LocatorManager:
                         "Auth_page_locators": "auth_page_locators",
                         "Order_Status_locators": "Order_Status",
                         "product_select_locators": "product_select",
+                        "discount_select_locators": "discount_select",
                     }
                     self._all_locators = self._load_all_locators()
                     self.platform = None

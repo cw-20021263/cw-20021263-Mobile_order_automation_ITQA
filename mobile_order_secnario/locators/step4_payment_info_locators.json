@@ -1,0 +1,356 @@
+{
+    "payment_info_select": {
+      "step_indicator": {
+        "android": {
+          "id": "",
+          "xpath": "//android.widget.TextView[@text='4']"
+        },
+        "ios": {
+          "accessibility_id": "4"
+        }
+      },
+      "page_title": {
+        "android": {
+          "id": "",
+          "xpath": "//android.widget.TextView[@text='결제정보 선택']"
+        },
+        "ios": {
+          "accessibility_id": "결제정보 선택"
+        }
+      },
+      "customer_name": {
+        "android": {
+          "id": "",
+          "xpath": "//android.widget.TextView[contains(@text, '고객명:')]"
+        },
+        "ios": {
+          "accessibility_id": "customer_name_display"
+        }
+      },
+      "regular_payment_amount_label": {
+      "android": {
+        "id": "",
+        "xpath": "//android.view.View[@text='정기결제금액']" 
+      },
+      "ios": { "accessibility_id": "정기결제금액" }
+    },
+
+    "regular_payment_amount_sub_label": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.TextView[normalize-space(@text)='매월 납부하는 금액']" 
+      },
+      "ios": { "accessibility_id": "매월 납부하는 금액" }
+    },
+    "lump_sum_payment_amount_label": {
+      "android": {
+        "id": "",
+        "xpath": "//android.view.View[@text='수납 금액']"
+      },
+      "ios": { "accessibility_id": "수납 금액" }
+    },
+
+    "lump_sum_payment_amount_sub_label": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.TextView[normalize-space(@text)='일회성 결제 금액']"
+      },
+      "ios": { "accessibility_id": "일회성 결제 금액" }
+    },
+
+    "regular_payment_amount_value": {
+      "android": {
+        "id": "",
+        "xpath": "//android.view.View[contains(@text, '정기결제금액')]/parent::*/following-sibling::android.widget.TextView"
+      },
+      "ios": { "accessibility_id": "정기결제금액_값" }
+    },
+
+    "lump_sum_payment_amount_value": {
+      "android": {
+        "id": "",
+        "xpath": "//android.view.View[contains(@text, '수납 금액')]/parent::*/following-sibling::android.widget.TextView"
+      },
+      "ios": { "accessibility_id": "수납 금액_값" }
+    },
+
+    "regular_payment_method_label": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.TextView[@text='정기결제수단']"
+      },
+      "ios": { "accessibility_id": "정기결제수단" }
+    },
+    "regular_payment_method_button": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.Button[@text='정기결제 수단 선택']"
+      },
+      "ios": { "accessibility_id": "정기결제 수단 선택" }
+    },
+    "regular_payment_method_selected": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.TextView[@text='정기결제수단']/following-sibling::android.view.View//android.widget.Button[contains(@text, '카드이체') or contains(@text, '은행이체')]"
+      },
+      "ios": { "accessibility_id": "정기결제수단_선택된결제수단" }
+    },
+    "lump_sum_payment_method_label": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.TextView[@text='수납결제수단']"
+      },
+      "ios": { "accessibility_id": "수납결제수단" }
+    },
+    "lump_sum_payment_method_button": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.Button[@text='수납결제 수단 선택']"
+      },
+      "ios": { "accessibility_id": "수납결제 수단 선택" }
+    },
+    "payment_method_add_button": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.Button[@text='추가']"
+      },
+      "ios": { "accessibility_id": "결제 수단 추가" }
+    },
+    "popup_title": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.TextView[@text='결제수단 추가']"
+      },
+      "ios": {
+        "accessibility_id": "결제수단 추가"
+      }
+    },
+    "tab_card_transfer": {
+      "android": {
+        "id": "",
+        "xpath": "//android.view.View[@text='카드이체']"
+      },
+      "ios": {
+        "accessibility_id": "카드이체"
+      }
+    },
+    "tab_bank_transfer": {
+      "android": {
+        "id": "",
+        "xpath": "//android.view.View[@text='은행이체']"
+      },
+      "ios": {
+        "accessibility_id": "은행이체"
+      }
+    },
+    "card_company_select_button": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.Button[@text='카드사 입력']"
+      },
+      "ios": {
+        "accessibility_id": "카드사 입력"
+      }
+    },
+    "card_number_input": {
+      "android": {
+        "id": "",
+        "xpath": "(//android.widget.TextView[@text='카드번호']/following-sibling::android.view.View//android.widget.EditText)[1]"
+      },
+      "ios": {
+        "accessibility_id": "카드번호 입력"
+      }
+    },
+    "expiry_month_input": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.TextView[@text='유효 기간']/following-sibling::android.view.View[1]//android.widget.EditText"
+      },
+      "ios": {
+        "accessibility_id": "유효 기간 월"
+      }
+    },
+    "expiry_year_input": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.TextView[@text='월']/following-sibling::android.view.View[1]//android.widget.EditText"
+      },
+      "ios": {
+        "accessibility_id": "유효 기간 년"
+      }
+    },
+    "owner_type_personal_button": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.Button[@text='개인']"
+      },
+      "ios": {
+        "accessibility_id": "개인"
+      }
+    },
+    "owner_name_input": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.TextView[@text='명의자']/following-sibling::android.view.View[1]//android.widget.EditText"
+      },
+      "ios": {
+        "accessibility_id": "명의자 입력"
+      }
+    },
+    "birth_date_input": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.TextView[@text='법정생년월일']/following-sibling::android.view.View[1]//android.widget.EditText"
+      },
+      "ios": {
+        "accessibility_id": "법정생년월일 입력"
+      }
+    },
+
+    "notice_text_bank": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.TextView[@text='※ 계약자 명의 계좌만 가능']"
+      },
+      "ios": {
+        "accessibility_id": "※ 계약자 명의 계좌만 가능"
+      }
+    },
+    "bank_label": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.TextView[@text='은행']"
+      },
+      "ios": {
+        "accessibility_id": "은행"
+      }
+    },
+    "bank_select_button": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.Button[@text='은행입력']"
+      },
+      "ios": {
+        "accessibility_id": "은행입력"
+      }
+    },
+    "bank_name_template": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.Button[@text='{bank_name}']"
+      },
+      "ios": {
+        "accessibility_id": ""
+      }
+    },
+    "account_number_label": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.TextView[@text='계좌번호']"
+      },
+      "ios": {
+        "accessibility_id": "계좌번호"
+      }
+    },
+    "account_number_input": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.TextView[@text='계좌번호']/following-sibling::android.view.View[1]//android.widget.EditText"
+      },
+      "ios": {
+        "accessibility_id": "계좌번호 입력"
+      }
+    },
+    "transfer_day_label": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.TextView[@text='이체일']"
+      },
+      "ios": {
+        "accessibility_id": "이체일"
+      }
+    },
+      "transfer_day_15_button": {
+        "android": {
+          "id": "",
+          "xpath": "//android.widget.Button[@text='15일']"
+        },
+        "ios": {
+          "accessibility_id": "15일"
+        }
+      },
+      "transfer_day_template": {
+        "android": {
+          "id": "",
+          "xpath": "//android.widget.Button[@text='{transfer_day}']"
+        },
+        "ios": {
+          "accessibility_id": ""
+        }
+      },
+      "card_company_template": {
+        "android": {
+          "id": "",
+          "xpath": "//android.widget.Button[@text='{card_company}']"
+        },
+        "ios": {
+          "accessibility_id": ""
+        }
+      },
+    "cancel_button": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.Button[@text='취소']"
+      },
+      "ios": {
+        "accessibility_id": "취소"
+      }
+    },
+    "add_submit_button": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.Button[@text='추가하기']"
+      },
+      "ios": {
+        "accessibility_id": "추가하기"
+      }
+    },
+
+    "payment_method_verify_template": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.Button[contains(@text, '{expected_text}')]"
+      },
+      "ios": {
+        "accessibility_id": ""
+      }
+    },
+    "prev_button": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.Button[@text='이전']"
+      },
+      "ios": {
+      "accessibility_id": "이전"
+      }
+    },
+    "next_button": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.Button[@text='다음']"
+      },
+      "ios": {
+        "accessibility_id": ""
+      }
+    },
+    "next_step5": {
+      "android": {
+        "id": "",
+        "xpath": "//android.widget.Button[@text='설치정보 화면으로 이동']"
+      },
+      "ios": {
+        "accessibility_id": "설치정보 화면으로 이동"
+      }
+    }
+  }
+}
