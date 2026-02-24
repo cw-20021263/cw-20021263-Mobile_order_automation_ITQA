@@ -15,9 +15,11 @@
     "product_name": "CHP-7211N"
   },
   "PaymentData": {
-    "BANK_NAME": "신한은행",
-    "ACCOUNT_NUMBER": "110123456789",
+    "BANK_NAME": "KEB하나은행",
+    "ACCOUNT_NUMBER": "40691052888607",
     "CARD_COMPANY": "신한카드",
-    "CARD_NUMBER": "4499111122223333"
+    "CARD_NUMBER": "4499111122223333",
+    "EXPIRATION_MONTH": "12",
+    "EXPIRATION_YEAR": "28"
   }
 }

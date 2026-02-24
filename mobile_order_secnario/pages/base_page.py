@@ -135,11 +135,17 @@ class BasePage:
                 wait = WebDriverWait(self.driver, timeout)
                 # -> EC.element_to_be_clickable을 사용하여 클릭 가능한 상태까지 기다립니다.
                 element = wait.until(EC.element_to_be_clickable((by, value)))
+                # 클릭 시도
                 element.click()
-                logger.info(f"'{element_name}' 요소를 클릭했습니다. (전략: {by})")
+                # 클릭이 성공적으로 실행되었을 때만 로그 출력
+                logger.info(f"✅ '{element_name}' 요소를 클릭했습니다. (전략: {by})")
                 return
             except (TimeoutException, NoSuchElementException) as e:
                 logger.warning(f"'{by}:{value}' 전략으로 '{element_name}' 클릭 실패. 재시도합니다.")
+                last_exception = e
+            except Exception as e:
+                # 클릭 관련 예외 (WebDriverException 등) 처리
+                logger.error(f"❌ '{element_name}' 클릭 중 예외 발생: {e}")
                 last_exception = e
 
         logger.error(f"모든 전략으로 '{element_name}' 요소를 클릭하지 못했습니다: {locator}")
@@ -198,6 +204,25 @@ class BasePage:
     def swipe_up(self, start_y_ratio=0.7, end_y_ratio=0.2, duration=800):
         """
         [추가] 화면을 아래에서 위로 스와이프하는 범용 함수입니다.
+        :param start_y_ratio: 스와이프 시작 Y좌표 비율 (화면 높이 대비)
+        :param end_y_ratio: 스와이프 종료 Y좌표 비율 (화면 높이 대비)
+        :param duration: 스와이프 동작 시간 (ms)
+        """
+        try:
+            size = self.driver.get_window_size()
+            start_x = size['width'] / 2
+            start_y = size['height'] * start_y_ratio
+            end_y = size['height'] * end_y_ratio
+
+            self.driver.swipe(start_x, start_y, start_x, end_y, duration)
+
+        except Exception as e:
+            logger.error(f"❌ 스와이프 실패: {e}", exc_info=True)
+            raise
+
+    def swipe_down(self, start_y_ratio=0.2, end_y_ratio=0.7, duration=800):
+        """
+        [추가] 화면을 위에서 아래로 스와이프하는 범용 함수입니다.
         :param start_y_ratio: 스와이프 시작 Y좌표 비율 (화면 높이 대비)
         :param end_y_ratio: 스와이프 종료 Y좌표 비율 (화면 높이 대비)
         :param duration: 스와이프 동작 시간 (ms)
