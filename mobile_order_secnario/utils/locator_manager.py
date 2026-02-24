@@ -32,6 +32,7 @@ class LocatorManager:
                         "Order_Status_locators": "Order_Status",
                         "product_select_locators": "product_select",
                         "discount_select_locators": "discount_select",
+                        "step4_payment_info_locators": "payment_info_select",
                     }
                     self._all_locators = self._load_all_locators()
                     self.platform = None
