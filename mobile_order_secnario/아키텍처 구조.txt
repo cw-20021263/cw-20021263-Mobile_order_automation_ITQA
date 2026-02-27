@@ -13,7 +13,14 @@
 │   ├── shipping_info_page.py
 │   ├── e_contract_page.py
 │   ├── order_status_page.py
-│   └── pre_contract_page.py
+│   ├── pre_contract_page.py
+│   └── mobile_subscription/            #모바일 청약 시나리오 폴더
+│       └── subscription_main_page.py   #모바일 청약 진입
+│       └── contractor_step1.py         #계약자 정보 입력
+│       └── installation_step2.py       #설치 정보 입력
+│       └── payment_step3.py            #결제 정보 입력
+│       └── product_step4.py            #상품 정보 입력
+│       └── terms_step5.py              #약관 동의 및 서명 입력
 ├── locators/
 │   └── digtalsales_locators.json	    #디지털세일즈앱에서 element
 │   └── order_docbar_locators.json	    #디지털세일즈앱에서 docbar로 모바일 주문 접근 시 element

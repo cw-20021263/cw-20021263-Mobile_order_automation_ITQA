@@ -1,0 +1,29 @@
+{
+  "scenario_1": {
+    "customer_info": {
+      "fixed": {
+        "name": "이희운",
+        "birthday": "1993-05-23",
+        "mobile": "010-6767-2720"
+      },
+      "flexible_options": {
+        "gender": {
+          "label": "성별",
+          "candidates": ["남자", "여자"],
+          "locator_key": "gender_group"
+        },
+        "nationality": {
+          "label": "내/외국인",
+          "candidates": ["내국인", "외국인"],
+          "locator_key": "nationality_group"
+        },
+        "auth_method": {
+          "label": "인증방식",
+          "candidates": ["코웨이 패스", "판매처 폰패드"],
+          "locator_key": "auth_method_group"
+        }
+      },
+      "target_address": "서울 영등포구 문래로28길 25"
+    }
+  }
+}
