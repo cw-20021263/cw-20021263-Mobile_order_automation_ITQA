@@ -1,29 +1,23 @@
 {
-  "scenario_1": {
-    "customer_info": {
-      "fixed": {
-        "name": "이희운",
-        "birthday": "1993-05-23",
-        "mobile": "010-6767-2720"
-      },
-      "flexible_options": {
-        "gender": {
-          "label": "성별",
-          "candidates": ["남자", "여자"],
-          "locator_key": "gender_group"
+  "ChungyakScenarios": [
+    {
+      "scenario_id": "ST1_INTEGRATED_RANDOM_TEST",
+      "ContractorInfo": {
+        "fixed": {
+          "customer_name": "이희운",
+          "birth_date": "1993-05-23",
+          "phone_number": "01067672720"
         },
-        "nationality": {
-          "label": "내/외국인",
-          "candidates": ["내국인", "외국인"],
-          "locator_key": "nationality_group"
-        },
-        "auth_method": {
-          "label": "인증방식",
-          "candidates": ["코웨이 패스", "판매처 폰패드"],
-          "locator_key": "auth_method_group"
+        "flexible": {
+          "gender": "랜덤",
+          "nationality": "랜덤",
+          "tel_input": "랜덤",
+          "address_type": "랜덤",
+          "auth_method": "랜덤",
+          "address_keyword": "문래로28길",
+          "address_detail": "랜덤"
         }
-      },
-      "target_address": "서울 영등포구 문래로28길 25"
+      }
     }
-  }
+  ]
 }

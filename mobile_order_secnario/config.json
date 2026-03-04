@@ -4,9 +4,9 @@
   },
   "Capabilities_Android": {
     "platformName": "Android",
-    "platformVersion": "16.0",
-    "deviceName": "Galaxy 22",
-    "udid": "R5CT22YH3FD",
+    "platformVersion": "15.0",
+    "deviceName": "Galaxy S22 Ultra",
+    "udid": "R3CT70V2T5H",
     "automationName": "UiAutomator2",
     "appPackage": "com.coway.catalog.seller.stg",
     "noReset": true,

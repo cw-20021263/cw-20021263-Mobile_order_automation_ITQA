@@ -1,265 +1,227 @@
 {
-  "page_locators": {
-
-     "마이페이지_item": {
+  "mobile_subscription_locators": {
+    "page_title": {
       "android": {
-        
+        "accessibility_id": "",
         "id": "",
-        "xpath": "//android.widget.TextView[@text='마이페이지']"
+        "xpath": "//android.widget.TextView[@text='모바일 청약']",
+        "-android uiautomator": "new UiSelector().className(\"android.widget.TextView\").text(\"모바일 청약\")"
       },
       "ios": {
+        "accessibility_id": "모바일 청약",
         "id": "",
-        "xpath": ""
+        "xpath": "",
+        "-ios class chain": ""
       }
     },
-    "청약_접수하기_item": {
+    "contractor_info_tab": {
       "android": {
+        "accessibility_id": "",
         "id": "",
-        "xpath": "//android.widget.Button[@text='청약 접수하기']"
+        "xpath": "//android.widget.Button[@text='계약자 정보']",
+        "-android uiautomator": "new UiSelector().className(\"android.widget.Button\").text(\"계약자 정보\")"
       },
       "ios": {
+        "accessibility_id": "계약자 정보",
         "id": "",
-        "xpath": ""
+        "xpath": "",
+        "-ios class chain": ""
       }
     },
-    "mobile_subscription_item": {
+    "customer_name_input": {
       "android": {
-        "id": "",
-        "xpath": "//android.widget.TextView[@text='모바일 청약']"
-      },
-      "ios": {
-        "id": "",
-        "xpath": ""
-      }
-    },
-    "contractor_info_item": {
-      "android": {
-        "id": "",
-        "xpath": "//android.widget.Button[@text='계약자 정보']"
-      },
-      "ios": {
-        "id": "",
-        "xpath": ""
-      }
-    },
-    "customer_name_item": {
-      "android": {
-        "id": "",
-        "xpath": "//android.view.View[@text='고객명']"
-      },
-      "ios": {
-        "id": "",
-        "xpath": ""
-      }
-    },
-    "input_25_item": {
-      "android": {
+        "accessibility_id": "",
         "id": "input-25",
-        "xpath": "//android.widget.EditText[@resource-id='input-25']"
+        "xpath": "//android.widget.EditText[@resource-id='input-25']",
+        "-android uiautomator": "new UiSelector().className(\"android.widget.EditText\").resourceId(\"input-25\")"
       },
       "ios": {
+        "accessibility_id": "이름 입력",
         "id": "",
-        "xpath": ""
+        "xpath": "",
+        "-ios class chain": ""
       }
     },
-    "legal_birthdate_item": {
+    "birth_date_select": {
       "android": {
-        "id": "",
-        "xpath": "//android.view.View[@text='법정생일']"
-      },
-      "ios": {
-        "id": "",
-        "xpath": ""
-      }
-    },
-    "not_selected_item": {
-      "android": {
-        "id": "",
-        "xpath": "//android.widget.Button[@text='미선택']"
-      },
-      "ios": {
-        "id": "",
-        "xpath": ""
-      }
-    },
-    "input_30_item": {
-      "android": {
+        "accessibility_id": "",
         "id": "input-30",
-        "xpath": "//android.widget.Button[@resource-id='input-30']"
+        "xpath": "//android.widget.Button[@resource-id='input-30']",
+        "-android uiautomator": "new UiSelector().className(\"android.widget.Button\").resourceId(\"input-30\")"
       },
       "ios": {
+        "accessibility_id": "법정생일 선택",
         "id": "",
-        "xpath": ""
+        "xpath": "",
+        "-ios class chain": ""
       }
     },
-    "gender_item": {
+    "gender_male_button": {
       "android": {
+        "accessibility_id": "",
         "id": "",
-        "xpath": "//android.view.View[@text='성별']"
+        "xpath": "//android.widget.Button[@text='남자']",
+        "-android uiautomator": "new UiSelector().className(\"android.widget.Button\").text(\"남자\")"
       },
       "ios": {
+        "accessibility_id": "남자",
         "id": "",
-        "xpath": ""
+        "xpath": "",
+        "-ios class chain": ""
       }
     },
-    "male_item": {
+    "gender_female_button": {
       "android": {
+        "accessibility_id": "",
         "id": "",
-        "xpath": "//android.widget.Button[@text='남자']"
+        "xpath": "//android.widget.Button[@text='여자']",
+        "-android uiautomator": "new UiSelector().className(\"android.widget.Button\").text(\"여자\")"
       },
       "ios": {
+        "accessibility_id": "여자",
         "id": "",
-        "xpath": ""
+        "xpath": "",
+        "-ios class chain": ""
       }
     },
-    "female_item": {
+    "nationality_local_button": {
       "android": {
+        "accessibility_id": "",
         "id": "",
-        "xpath": "//android.widget.Button[@text='여자']"
+        "xpath": "//android.widget.Button[@text='내국인']",
+        "-android uiautomator": "new UiSelector().className(\"android.widget.Button\").text(\"내국인\")"
       },
       "ios": {
+        "accessibility_id": "내국인",
         "id": "",
-        "xpath": ""
+        "xpath": "",
+        "-ios class chain": ""
       }
     },
-    "nationality_type_item": {
+    "nationality_foreigner_button": {
       "android": {
+        "accessibility_id": "",
         "id": "",
-        "xpath": "//android.view.View[@text='내/외국인']"
+        "xpath": "//android.widget.Button[@text='외국인']",
+        "-android uiautomator": "new UiSelector().className(\"android.widget.Button\").text(\"외국인\")"
       },
       "ios": {
+        "accessibility_id": "외국인",
         "id": "",
-        "xpath": ""
+        "xpath": "",
+        "-ios class chain": ""
       }
     },
-    "domestic_item": {
+    "phone_number_input": {
       "android": {
-        "id": "",
-        "xpath": "//android.widget.Button[@text='내국인']"
-      },
-      "ios": {
-        "id": "",
-        "xpath": ""
-      }
-    },
-    "foreigner_item": {
-      "android": {
-        "id": "",
-        "xpath": "//android.widget.Button[@text='외국인']"
-      },
-      "ios": {
-        "id": "",
-        "xpath": ""
-      }
-    },
-    "mobile_number_item": {
-      "android": {
-        "id": "",
-        "xpath": "//android.view.View[@text='휴대폰번호']"
-      },
-      "ios": {
-        "id": "",
-        "xpath": ""
-      }
-    },
-    "input_39_item": {
-      "android": {
+        "accessibility_id": "",
         "id": "input-39",
-        "xpath": "//android.widget.EditText[@resource-id='input-39']"
+        "xpath": "//android.widget.EditText[@resource-id='input-39']",
+        "-android uiautomator": "new UiSelector().className(\"android.widget.EditText\").resourceId(\"input-39\")"
       },
       "ios": {
+        "accessibility_id": "휴대폰번호 입력",
         "id": "",
-        "xpath": ""
+        "xpath": "",
+        "-ios class chain": ""
       }
     },
-    "auth_number_search_item": {
+    "auth_number_search_button": {
       "android": {
+        "accessibility_id": "",
         "id": "",
-        "xpath": "//android.widget.Button[@text='인증번호 조회']"
+        "xpath": "//android.widget.Button[@text='인증번호 조회']",
+        "-android uiautomator": "new UiSelector().className(\"android.widget.Button\").text(\"인증번호 조회\")"
       },
       "ios": {
+        "accessibility_id": "인증번호 조회",
         "id": "",
-        "xpath": ""
+        "xpath": "",
+        "-ios class chain": ""
       }
     },
-    "phone_number_item": {
+    "tel_number_input": {
       "android": {
-        "id": "",
-        "xpath": "//android.view.View[@text='전화번호']"
-      },
-      "ios": {
-        "id": "",
-        "xpath": ""
-      }
-    },
-    "input_43_item": {
-      "android": {
+        "accessibility_id": "",
         "id": "input-43",
-        "xpath": "//android.widget.EditText[@resource-id='input-43']"
+        "xpath": "//android.widget.EditText[@resource-id='input-43']",
+        "-android uiautomator": "new UiSelector().className(\"android.widget.EditText\").resourceId(\"input-43\")"
       },
       "ios": {
+        "accessibility_id": "전화번호 입력 (선택)",
         "id": "",
-        "xpath": ""
+        "xpath": "",
+        "-ios class chain": ""
       }
     },
-    "address_item": {
+    "address_input_button": {
       "android": {
+        "accessibility_id": "",
         "id": "",
-        "xpath": "//android.view.View[@text='주소']"
+        "xpath": "//android.widget.Button[@text='주소입력']",
+        "-android uiautomator": "new UiSelector().className(\"android.widget.Button\").text(\"주소입력\")"
       },
       "ios": {
+        "accessibility_id": "주소입력",
         "id": "",
-        "xpath": ""
+        "xpath": "",
+        "-ios class chain": ""
       }
     },
-    "address_input_item": {
+    "auth_method_select": {
       "android": {
+        "accessibility_id": "",
         "id": "",
-        "xpath": "//android.widget.Button[@text='주소입력']"
+        "xpath": "//android.view.View[android.view.View[@text='인증방식']]/following-sibling::android.view.View//android.widget.Button",
+        "-android uiautomator": "new UiSelector().className(\"android.widget.Button\").text(\"미선택\").instance(1)"
       },
       "ios": {
+        "accessibility_id": "인증방식 선택",
         "id": "",
-        "xpath": ""
+        "xpath": "",
+        "-ios class chain": ""
       }
     },
-    "auth_method_item": {
+    "temporary_save_button": {
       "android": {
+        "accessibility_id": "",
         "id": "",
-        "xpath": "//android.view.View[@text='인증방식']"
+        "xpath": "//android.widget.Button[@text='임시저장']",
+        "-android uiautomator": "new UiSelector().className(\"android.widget.Button\").text(\"임시저장\")"
       },
       "ios": {
+        "accessibility_id": "임시저장",
         "id": "",
-        "xpath": ""
+        "xpath": "",
+        "-ios class chain": ""
       }
     },
-    "installation_info_item": {
+    "register_button": {
       "android": {
+        "accessibility_id": "",
         "id": "",
-        "xpath": "//android.widget.Button[@text='설치 정보']"
+        "xpath": "//android.widget.Button[@text='등록']",
+        "-android uiautomator": "new UiSelector().className(\"android.widget.Button\").text(\"등록\")"
       },
       "ios": {
+        "accessibility_id": "등록",
         "id": "",
-        "xpath": ""
+        "xpath": "",
+        "-ios class chain": ""
       }
     },
-    "temporary_storage_item": {
+    "next_install_info_button": {
       "android": {
+        "accessibility_id": "",
         "id": "",
-        "xpath": "//android.widget.Button[@text='임시저장']"
+        "xpath": "//android.widget.Button[@text='설치 정보']",
+        "-android uiautomator": "new UiSelector().className(\"android.widget.Button\").text(\"설치 정보\")"
       },
       "ios": {
+        "accessibility_id": "설치 정보",
         "id": "",
-        "xpath": ""
-      }
-    },
-    "register_item": {
-      "android": {
-        "id": "",
-        "xpath": "//android.widget.Button[@text='등록']"
-      },
-      "ios": {
-        "id": "",
-        "xpath": ""
+        "xpath": "",
+        "-ios class chain": ""
       }
     }
   }
